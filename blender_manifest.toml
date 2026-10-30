@@ -1,7 +1,7 @@
 schema_version = "1.0.0"
 
 id = "spline_generator"
-version = "1.0.5"
+version = "1.0.6"
 name = "Spline Generator"
 tagline = "Generate parametric spline"
 tags = ["3D View", "Add Curve"]
@@ -13,5 +13,8 @@ blender_version_min = "4.2.0"
 
 website = "https://tfmstyle.com"
 
+[permissions]
+network = "Check for and download updates from Relay"
+
 [build]
-paths = ["__init__.py", "LICENSE"]
+paths = ["__init__.py", "relay_updater.py", "LICENSE"]

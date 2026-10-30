@@ -4,7 +4,7 @@
 bl_info = {
     "name": "Spline",
     "author": "The French Monkey",
-    "version": (1, 0, 5),
+    "version": (1, 0, 6),
     "blender": (4, 2, 0),
     "location": "View3D > Sidebar > Spline",
     "description": "Generate parametric spline",
@@ -14,6 +14,11 @@ bl_info = {
 
 import bpy
 from math import sin, cos, sqrt, pi, exp, isfinite
+
+try:
+    from . import relay_updater
+except ImportError:  # the Addon Collection has its own updates
+    relay_updater = None
 
 # ----------------------------------------------------------
 # Utility
@@ -1011,6 +1016,8 @@ class VIEW3D_PT_spline_generator(bpy.types.Panel):
     bl_category = "Spline"
 
     def draw(self, context):
+        if relay_updater:
+            relay_updater.draw(self.layout)
         layout = self.layout
         p = context.scene.splinegen_props
         o = context.object
@@ -1052,11 +1059,15 @@ classes = (
 )
 
 def register():
+    if relay_updater:
+        relay_updater.register("blender-spline")
     for c in classes:
         bpy.utils.register_class(c)
     bpy.types.Scene.splinegen_props = bpy.props.PointerProperty(type=SplineGenProperties)
 
 def unregister():
+    if relay_updater:
+        relay_updater.unregister()
     for c in reversed(classes):
         bpy.utils.unregister_class(c)
     del bpy.types.Scene.splinegen_props
