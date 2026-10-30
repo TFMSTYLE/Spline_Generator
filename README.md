@@ -3,7 +3,7 @@
 ![spline-thumb](https://github.com/user-attachments/assets/39b6c86b-8448-485a-b835-8a6fd0a977a2)
 
 **Author:** The French Monkey (TFMSTYLE)  
-**Version:** 1.0.4  
+**Version:** 1.0.5  
 
 ---
 
@@ -113,3 +113,21 @@ The curve is generated as a 3D polyline, suitable for extrusion, geometry node i
 - Generated curves are fully procedural and can be converted to mesh or used as curve modifiers.  
 - Chaotic attractors like **Lorenz** and **Rossler** may require fine-tuning for balanced output.  
 - Ideal for procedural modeling, animation paths, and parametric design workflows.
+
+---
+
+## Install
+
+Needs Blender 4.2 or later. In Blender open Edit > Preferences > Get Extensions and search for Spline Generator.
+
+To build the zip yourself, run this in the repo folder:
+
+```bash
+blender --command extension build
+```
+
+---
+
+## License
+
+GPL 3.0 or later. See [LICENSE](LICENSE).
