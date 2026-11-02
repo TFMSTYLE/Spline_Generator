@@ -4,7 +4,7 @@
 bl_info = {
     "name": "Spline",
     "author": "The French Monkey",
-    "version": (1, 0, 6),
+    "version": (1, 0, 7),
     "blender": (4, 2, 0),
     "location": "View3D > Sidebar > Spline",
     "description": "Generate parametric spline",

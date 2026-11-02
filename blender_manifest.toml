@@ -1,7 +1,7 @@
 schema_version = "1.0.0"
 
 id = "spline_generator"
-version = "1.0.6"
+version = "1.0.7"
 name = "Spline Generator"
 tagline = "Generate parametric spline"
 tags = ["3D View", "Add Curve"]
